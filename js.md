@@ -1,6 +1,6 @@
 ![JS Logo](./assets/JS-logo2.png)
 
-# JavaScript 
+
 
 ## Table of contents
 
@@ -26,4 +26,18 @@ const promise = new Promise(executorFunction);
 const promise2 = promise.then(handleSuccess, handleFailure);
 ```
 
-**Chaining Multiple Promises**
+**Chaining Multiple Promises** (Promise Compositon ) <br>
+For operations that depend on each other or have to be executed in a certain order, you can chain multiple `then` expressions.
+
+[Pseudo code from MDN-> chained promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise#chained_promises)
+```js
+myPromise
+.then(handleResolvedA)
+.then(handleResolvedB)
+.then(handleResolvedC)
+.catch(handleRejectedAny);
+```
+
+As an example, you can think of a request to an API that you await for a response to make yet another request.
+
+**Promise.all()**
