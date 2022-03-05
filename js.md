@@ -4,9 +4,10 @@
 
 ## Table of contents
 
-- [Promises](#Promises)
+- [Promises](#promises)
+- [Async Await](#async-await)
 
-## Promises
+## **Promises**
 Promises are objects that represent the eventual outcome of an **asynchronous operation** and its resulting value. 
 A Promise object can be in one of these **three states**:
 
@@ -41,7 +42,7 @@ myPromise
 As an example, you can think of a request to an API that you await for a response to make yet another request.
 
 **Promise.all()**<br>
-If the different operations do not depend on each other and the order of the execution is not important, you should take advantage of concurrency and use the method `Promise.all(). The method takes an iterable array of promises and returns a single promise. <br>
+If the different operations do not depend on each other and the order of the execution is not important, you should take advantage of concurrency and use the method `Promise.all()`. The method takes an iterable array of promises and returns a single promise. <br>
 This single promise settles in one of two ways. Either all promises in the array will resolve and return an array with the respective values, or it gets rejected immediately, as one of the promises in the array throws an error (falling fast). <br> 
 
 ```js
@@ -49,3 +50,8 @@ Promise.all([promise1, promise2, promise3])
   .then(onFulfill)
   .catch(onReject);
 ```
+<br><br>
+## **Async Await**
+async .. await syntax was introduced with ECMAScript 2017 and is meant as syntactic sugar, improving readability for complexly nested callback functions within promises. In this syntax, asynchronous code reads much more like traditional synchronous code and is easier to read and write. 
+
+**async keyword**
