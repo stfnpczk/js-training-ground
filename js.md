@@ -54,4 +54,12 @@ Promise.all([promise1, promise2, promise3])
 ## **Async Await**
 async .. await syntax was introduced with ECMAScript 2017 and is meant as syntactic sugar, improving readability for complexly nested callback functions within promises. In this syntax, asynchronous code reads much more like traditional synchronous code and is easier to read and write. 
 
-**async keyword**
+**async keyword** <br>
+The `async` keyword is used in front of a function declaration to handle asynchronous code. <br>
+Invoking an async function always returns a promise, thus it can be used together with `.then()` and `.catch()` <br>
+The return value of an async function can be one of the three:
+1. if the function returns nothing, a promise will be returned with a resolved value of undefined 
+2. if the function returns a promise that promise is also returned
+3. otherwise a promise with the respective resolved value is returned
+
+**await keyword** <br>
