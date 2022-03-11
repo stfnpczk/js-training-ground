@@ -8,7 +8,7 @@
 - [Async Await](#async-await)
 
 ## **Promises**
-Promises are objects that represent the eventual outcome of an **asynchronous operation** and its resulting value. 
+A Promise is an object that handles asynchronus data. This object represents the eventual outcome of an **asynchronous operation** and its resulting value. 
 A Promise object can be in one of these **three states**:
 
   - **pending**: initial state, the operation has not completed yet, neither fulfilled nor rejected
@@ -63,3 +63,16 @@ The return value of an async function can be one of the three:
 3. otherwise a promise with the respective resolved value is returned
 
 **await keyword** <br>
+The await keyword can only be used inside an async function, it makes the function wait for the promise until it settles. Await is treated like an operator, it awaits the resolution of the promise and either returns the resolved value or throws an error. 
+
+```js
+async function fetchData() {
+  const response = await fetch($apiEndpoint);
+  if(!response.ok) {
+    throw new Error(`Request failed!`)
+  ...
+  }
+}
+```
+
+Fetch request
