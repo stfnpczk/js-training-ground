@@ -6,6 +6,7 @@
 
 - [Promises](#promises)
 - [Async Await](#async-await)
+- [Fetch Request](#fetch-request)
 
 ## **Promises**
 A Promise is an object that handles asynchronus data. This object represents the eventual outcome of an **asynchronous operation** and its resulting value. 
@@ -75,4 +76,5 @@ async function fetchData() {
 }
 ```
 
-Fetch request
+## **Fetch Request**
+With the introduction of Promises in ES6, asynchronus event handling was made easier. `fetch()` uses Promises to handle network requests. Using fetch() instead of XMLHTTPRequest(XHR) provides an easier handling of requests avoiding complicated callback chains.
