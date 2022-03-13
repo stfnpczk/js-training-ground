@@ -78,3 +78,26 @@ async function fetchData() {
 
 ## **Fetch Request**
 With the introduction of Promises in ES6, asynchronus event handling was made easier. `fetch()` uses Promises to handle network requests. Using fetch() instead of XMLHTTPRequest(XHR) provides an easier handling of requests avoiding complicated callback chains.
+
+[mdn async/await fetch code](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Promises#async_and_await)
+
+```js
+async function fetchProducts() {
+  try {
+    const response = await fetch('https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json');
+    if (!response.ok) {
+      throw new Error(`HTTP error: ${response.status}`);
+    }
+    const json = await response.json();
+    console.log(json[0].name);
+  }
+  catch(error) {
+    console.error(`Could not get products: ${error}`);
+  }
+}
+
+fetchProducts();
+```
+
+The `fetch()` function sends a request to an **API endpoint**. Using async/ await here makes the function wait for the promise to settle. Once it settles, it either throws an error or returns a promise and resolves to a **response object**, that holds the status of the promise and the info requested from the API call.<br>
+With `await response.json()` the function waits until the response object is converted to json and ultimately returns it or throws an error. 
